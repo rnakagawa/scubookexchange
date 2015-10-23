@@ -1,0 +1,23 @@
+body{
+	padding: 0px;
+}
+.white-text{
+	color: white;
+}
+.navbar-header .navbar-toggle .icon-bar{
+	background-color: white;
+}
+.navbar-custom{
+	background-color: hsla(354, 85%, 40%, 0.75);
+}
+.container-custom{
+	width: 85%;
+	border-radius: 4px;
+	background-color: hsla(360, 0%, 68%, .68);
+	padding-bottom: 10px;
+}
+
+.featured{
+	border-radius: 3px;
+	border: gray 1 solid;
+}
