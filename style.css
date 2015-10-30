@@ -21,3 +21,15 @@ body{
 	border-radius: 3px;
 	border: gray 1 solid;
 }
+.results{
+	padding: 10px;
+}
+.item{
+}
+.item img{
+	float: left;
+}
+.item p{
+	margin-bottom: 2px;
+	padding-left: 10px;
+}
