@@ -1,4 +1,5 @@
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
@@ -23,45 +24,54 @@
 					<li><a style="color: white;" href="#">Home</a></li>
 					<li><a style="color: white;" href="#">Sell</a></li>
 					<li class="dropdown">
-						<a href="#" style="color: white;" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a style="color:white;" href="#">The Developers</a></li>
-								<li><a style="color:white;" href="#">Contact</a></li>
-							</ul>
+					<a href="#" style="color: white;" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a style="color:white;" href="#">The Developers</a></li>
+							<li><a style="color:white;" href="#">Contact</a></li>
+						</ul>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="container">
-		<form class="form-inline" role="form">
-			<div class="input-group">
-				<input type="text" class="form-control " placeholder="Search" name="srch-term" id="srch-term">
-				<div class="input-group-btn">
-					<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-				</div>
+		<div class="info">
+			<div class="bookImg">
+				<img style="height: 150px; width: 125px;"></img>
 			</div>
-		</form>
+			<div class="details">
+				<p name="title" id="title"></p>
+				<p name="author" id="author"></p>
+				<p name="edition" id="edition"></p>
+				<p name="isbn" id="isbn"></p>
+			</div>
+		</div>
 	</div>
-	<div id="results" class="container results" style="height: 65%; background-color: red;">
-		<div class="item">
-			<img src="" style="heigth: 100px; width: 100px;"></img>
-			<div class="bookInfo">
-				<p class="title">
-					COEN 12
-				</p>
-				<p class="author">
-					Bill Bob
-				</p>
-				<p class="ed">
-					13
-				</p>
-				<p class="isbn">
-					0123456789
-				</p>
-			</div>
+	<div class="container">
+		<div class="sellers">
 		</div>
 	</div>
 
 </body>
 </html>
+<script>
+	$isbn = $("#isbn");
+	// $(document).ready(function(){
+	// 	xhttp.open('GET', $isbn, true);
+	// 	xhttp:.send();
+	// });
+	$(document).ready(function(){
+		$.ajax({
+			type: "GET",
+			dataType: "json",
+			url: "getSellers.php",
+			data: $isbn
+		}).success(function(response){
+			console.log("success");
+			readSellers(response);
+		});
+	});
+	function readSellers(response){
+		alert(response);
+	}
+</script>
