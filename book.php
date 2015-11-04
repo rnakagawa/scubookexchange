@@ -56,10 +56,6 @@
 </html>
 <script>
 	$isbn = $("#isbn");
-	// $(document).ready(function(){
-	// 	xhttp.open('GET', $isbn, true);
-	// 	xhttp:.send();
-	// });
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
