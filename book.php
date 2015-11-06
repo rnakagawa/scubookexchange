@@ -55,19 +55,18 @@
 </body>
 </html>
 <script>
-	$isbn = $("#isbn");
+//	$isbn = $_GET['isbn'];
+	$isbn = "0123456789";
 	$(document).ready(function(){
-		$.ajax({
+			$.ajax({
 			type: "GET",
-			dataType: "json",
 			url: "getSellers.php",
-			data: $isbn
+			data: { 'isbn': $isbn.toString() }
 		}).success(function(response){
-			console.log("success");
 			readSellers(response);
 		});
 	});
 	function readSellers(response){
-		alert(response);
+		console.log(response);
 	}
 </script>
