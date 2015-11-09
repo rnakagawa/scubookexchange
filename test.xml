@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+<ItemLookupResponse
+    xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"></Header>
+        </HTTPHeaders>
+        <RequestId>230adf5c-6724-4d8d-b9ea-6cc3cf92a43e</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAJ6CAYQXOQCJ5C4DA"></Argument>
+            <Argument Name="AssociateTag" Value="scubookexchan-20"></Argument>
+            <Argument Name="IdType" Value="ISBN"></Argument>
+            <Argument Name="ItemId" Value="9780073191645"></Argument>
+            <Argument Name="Operation" Value="ItemLookup"></Argument>
+            <Argument Name="SearchIndex" Value="Books"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Timestamp" Value="2015-11-04T01:54:21.000Z"></Argument>
+            <Argument Name="Signature" Value="8y10LWds49WtOa8mR0C0aZAoVxl0FrmeWCXE9cBIQ2Y="></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0236050000000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemLookupRequest>
+                <IdType>ISBN</IdType>
+                <ItemId>9780073191645</ItemId>
+                <ResponseGroup>Small</ResponseGroup>
+                <SearchIndex>Books</SearchIndex>
+                <VariationPage>All</VariationPage>
+            </ItemLookupRequest>
+        </Request>
+        <Item>
+            <ASIN>0073191647</ASIN>
+            <DetailPageURL>http://www.amazon.com/Introduction-Logic-Design-3rd-Edition/dp/0073191647%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0073191647</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>http://www.amazon.com/Introduction-Logic-Design-3rd-Edition/dp/tech-data/0073191647%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0073191647%26SubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0073191647%26SubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0073191647%26SubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>http://www.amazon.com/gp/pdp/taf/0073191647%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>http://www.amazon.com/review/product/0073191647%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>http://www.amazon.com/gp/offer-listing/0073191647%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0073191647</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Author>Alan B. Marcovitz</Author>
+                <Manufacturer>McGraw-Hill</Manufacturer>
+                <ProductGroup>Book</ProductGroup>
+                <Title>Introduction to Logic Design, 3rd Edition</Title>
+            </ItemAttributes>
+        </Item>
+        <Item>
+            <ASIN>B005IQHAXQ</ASIN>
+            <DetailPageURL>http://www.amazon.com/Introduction-Logic-Design-Alan-Marcovitz-ebook/dp/B005IQHAXQ%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB005IQHAXQ</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>http://www.amazon.com/Introduction-Logic-Design-Alan-Marcovitz-ebook/dp/tech-data/B005IQHAXQ%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB005IQHAXQ%26SubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB005IQHAXQ%26SubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB005IQHAXQ%26SubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>http://www.amazon.com/gp/pdp/taf/B005IQHAXQ%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>http://www.amazon.com/review/product/B005IQHAXQ%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>http://www.amazon.com/gp/offer-listing/B005IQHAXQ%3FSubscriptionId%3DAKIAJ6CAYQXOQCJ5C4DA%26tag%3Dscubookexchan-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005IQHAXQ</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Author>Alan B Marcovitz</Author>
+                <Manufacturer>Science Engineering & Math</Manufacturer>
+                <ProductGroup>eBooks</ProductGroup>
+                <Title>Introduction to Logic Design</Title>
+            </ItemAttributes>
+        </Item>
+    </Items>
+</ItemLookupResponse>

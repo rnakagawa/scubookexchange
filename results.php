@@ -43,21 +43,17 @@
 			</div>
 		</form>
 	</div>
-	<div id="results" class="container results" style="height: 65%; background-color: red;">
-		<div class="item">
+	<div id="results" class="container results" style="height: 65%; border: solid 1px black;">
+		<div class="item" onclick='selectBook()'>
 			<img src="" style="heigth: 100px; width: 100px;"></img>
 			<div class="bookInfo">
 				<p class="title">
-					COEN 12
 				</p>
 				<p class="author">
-					Bill Bob
 				</p>
 				<p class="ed">
-					13
 				</p>
 				<p class="isbn">
-					0123456789
 				</p>
 			</div>
 		</div>
@@ -65,3 +61,34 @@
 
 </body>
 </html>
+<script>
+	$test="";
+	$(document).ready(function(){
+		$.ajax({
+			type: 'GET',
+			url: 'retrieveResults.php',
+			data: $test
+		}).success(function(response){
+			renderResults(response);
+		});
+	});
+	function renderResults(response){
+		console.log(response);
+	}
+	function selectBook(){
+		var info={
+			title: this.$('title'),
+			author: this.$('author'),
+			ed: this.$('ed'),
+			isbn: this.$('isbn')
+		};
+		console.log(info);	
+		$.ajax({
+		type: "GET",
+		url: "book.php",
+		data: {'info': info}
+		});
+	}
+	
+
+</script>
