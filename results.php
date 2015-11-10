@@ -43,17 +43,17 @@
 			</div>
 		</form>
 	</div>
-	<div id="results" class="container results" style="height: 65%; border: solid 1px black;">
+	<div id="results" class="container-results">
 		<div class="item" onclick='selectBook()'>
-			<img src="" style="heigth: 100px; width: 100px;"></img>
+			<img src=""></img>
 			<div class="bookInfo">
-				<p class="title">
+				<p class="title">Title
 				</p>
-				<p class="author">
+				<p class="author">Bill Bob, Bobby Bill
 				</p>
-				<p class="ed">
+				<p class="ed">3
 				</p>
-				<p class="isbn">
+				<p class="isbn">0123456789
 				</p>
 			</div>
 		</div>
@@ -73,7 +73,24 @@
 		});
 	});
 	function renderResults(response){
-		console.log(response);
+		$r = JSON.parse(response);
+		$head = '<div class="item" onclick="selectBook()">'+
+			'<img src=""></img>'+
+			'<div class="bookInfo">';
+		$tail='</div></div>';
+		for($i = 0; $i<$r.length; $i++){
+			$html=$head;
+			$.each($r[$i], function(key, value){
+				if(value[1]){
+					$html+=('<p class="'+key+'">'+value[0]+', '+value[1]+'</p>');
+				}
+				else{
+					$html+=('<p class="'+key+'">'+value[0]+'</p>');
+				}
+			});
+			$html+=$tail;
+			$('#results').append($html);
+		}
 	}
 	function selectBook(){
 		var info={

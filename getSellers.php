@@ -20,7 +20,6 @@
 	$result=mysqli_query($conn, $query);
 	if($result==null){echo("error");}
 	else{
-		//while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
 		while($row=$result->fetch_assoc()){
 			$sellers[$i] = new seller();
 			$sellers[$i]->bookIsbn = $row['isbn'];

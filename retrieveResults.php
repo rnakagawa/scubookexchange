@@ -1,13 +1,6 @@
 <?php
 
-$xmlString='/* **********Unsigned URL********** */
-http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemLookup&SubscriptionId=AKIAIVFEERMIG5NAAGSA&AssociateTag=scu0bb-20&ItemId=0199379998&ResponseGroup=Large
-
-/* **********Signed URL********** */
-http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIVFEERMIG5NAAGSA&AssociateTag=scu0bb-20&ItemId=0199379998&Operation=ItemLookup&ResponseGroup=Large&Service=AWSECommerceService&Timestamp=2015-11-08T21%3A33%3A21.000Z&Signature=tJqiZWKZza%2BDqY9JXmUUgp6fu3LnHvuJhgnGxZw922k%3D
-
-/* **********Response********** */
-<?xml version="1.0" ?>
+$xmlString='<?xml version="1.0" ?>
 <ItemLookupResponse
     xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
     <OperationRequest>
@@ -539,7 +532,7 @@ http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIVFEERMIG5NAAGSA&Assoc
     </Items>
 </ItemLookupResponse>';
 
-	var_dump(libxml_use_internal_errors(true));
+	// var_dump(libxml_use_internal_errors(true));
 	$xmlString=preg_replace('/&(?!#?[a-z0-9]+;)/', '&amp;', $xmlString);
 	$xml = simplexml_load_string($xmlString);
 
@@ -548,27 +541,25 @@ http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIVFEERMIG5NAAGSA&Assoc
     }
 
     class result{
-    	var $title, $author, $isbn, $ed;
-    	function _construct($title, $author, /*ed,*/$isbn){
-    		$this->title = title;
-    		$this->author = author;
-    		// $this->ed = ed;
-    		$this->isbn = isbn;
-    	}
-    	function getInfo(){
-    		
+        public $title;
+        public $author;
+        public $ed;
+        public $isbn;
+    	public function __construct($title, $author, $ed, $isbn){
+    		$this->title = $title;
+    		$this->author = $author;
+    		$this->ed = $ed;
+    		$this->isbn = $isbn;
     	}
     }
     $results=[];
-
     for($i = 0; $i < sizeof($xml->Items); $i++){
 		$author=$xml->Items->Item->ItemAttributes->Author;
 		$title=$xml->Items->Item->ItemAttributes->Title;
 		$isbn=$xml->Items->Item->ItemAttributes->ISBN;
 		$ed=$xml->Items->Item->ItemAttributes->Edition;
-		// $isbn=$xml->Items->Request->ItemLookupRequest->ItemId;	
-    	$results[$i] = new result($title, $author, $isbn);
-    	echo($results[$i].author);
+    	$results[$i] = new result($title, $author, $ed, $isbn);
     }
     echo json_encode($results);
+    
 ?>

@@ -24,15 +24,37 @@ h1{
 	border-radius: 3px;
 	border: gray 1 solid;
 }
-.results{
+.container-results{
 	padding: 10px;
+	border: #AFADAD 1px solid;
+	border-radius: 3px;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
 }
 .item{
+	position: relative;
+	margin: 15px;
 }
 .item img{
-	float: left;
+	height: 150px;
+	width: 120px;
 }
-.item p{
+.bookInfo{
+	position: absolute;
+	left: 125px;
+	top: 15px;
 	margin-bottom: 2px;
 	padding-left: 10px;
+}
+.title{
+	font-size: 14pt;
+	font-style: bold;
+	margin-bottom: 8px;
+}
+.author, .ed, .isbn{
+	font-style: italic;
+	margin-bottom: 0;
+	margin-left: 10px;
 }
