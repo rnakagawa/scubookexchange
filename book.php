@@ -36,17 +36,20 @@
 	</div>
 	<div class="container">
 		<div class="info">
-			<div class="bookImg">
-				<img style="height: 150px; width: 125px;"></img>
-			</div>
-			<div class="details">
-				<p name="title" id="title"></p>
-				<p name="author" id="author"></p>
-				<p name="edition" id="edition"></p>
-				<p name="isbn" id="isbn"></p>
+			<img src=""></img>
+			<div class="bookInfo">
+				<p class="title">Title
+				</p>
+				<p class="author">Bill Bob, Bobby Bill
+				</p>
+				<p class="ed">3
+				</p>
+				<p class="isbn">0123456789
+				</p>
 			</div>
 		</div>
 	</div>
+	<hr>
 	<div class="container">
 		<div class="sellers">
 		</div>
@@ -67,6 +70,9 @@
 		});
 	});
 	function readSellers(response){
+		// $.each(response, function(key, value){
+
+		// })
 		console.log(response);
 	}
 </script>
