@@ -58,3 +58,8 @@ h1{
 	margin-bottom: 0;
 	margin-left: 10px;
 }
+.sellers{
+	width: 75%;
+	height: 600px;
+	border: #AFADAD 1px solid;
+}
