@@ -556,11 +556,10 @@ $xmlString='<?xml version="1.0" ?>
     for($i = 0; $i < sizeof($xml->Items); $i++){
 		$author=$xml->Items->Item->ItemAttributes->Author;
 		$title=$xml->Items->Item->ItemAttributes->Title;
-        echo($title);
 		$isbn=$xml->Items->Item->ItemAttributes->ISBN;
 		$ed=$xml->Items->Item->ItemAttributes->Edition;
     	$results[$i] = new result($title, $author, $ed, $isbn);
     }
-    // echo json_encode($results);
+    echo json_encode($results);
     
 ?>

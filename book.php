@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="info-container">
 		<div class="info">
 			<img src=""></img>
 			<div class="bookInfo">
@@ -49,9 +49,50 @@
 			</div>
 		</div>
 	</div>
-	<hr>
-	<div class="container">
-		<div class="sellers">
+	<div class="container pop sellers">
+		<div class="seller ">
+			<p class="header">
+				PRICE
+			</p>
+			<p class="header">
+				CONDITION
+			</p>
+			<p class="header">
+				CONTACT SELLER
+			</p>
+		</div>
+		<div class ="seller">
+			<p class="price">
+				$50
+			</p>
+			<p class="condition">
+				good
+			</p>
+			<p>
+				<button class="buy">Contact Seller</button>
+			</p>
+		</div>
+		<div class ="seller">
+			<p class="price">
+				$50
+			</p>
+			<p class="condition">
+				good
+			</p>
+			<p>
+				<button class="buy">Contact Seller</button>
+			</p>
+		</div>
+		<div class ="seller">
+			<p class="price">
+				$50
+			</p>
+			<p class="condition">
+				good
+			</p>
+			<p>
+				<button class="buy">Contact Seller</button>
+			</p>
 		</div>
 	</div>
 

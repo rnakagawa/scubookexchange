@@ -1,6 +1,7 @@
 <?php
 	class seller{
-		public $bookIsbn="";	
+		public $bookIsbn="";
+		public $title="";	
 		public $email="";
 		public $condition="";
 		public $price="";
@@ -23,6 +24,7 @@
 		while($row=$result->fetch_assoc()){
 			$sellers[$i] = new seller();
 			$sellers[$i]->bookIsbn = $row['isbn'];
+			$sellers[$i]->title=$row['title'];
 			$sellers[$i]->email = $row['email'];
 			$sellers[$i]->condition = $row['condition'];
 			$sellers[$i]->price=$row['price'];
