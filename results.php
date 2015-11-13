@@ -44,21 +44,7 @@
 		</form>
 	</div>
 	<div id="results" class="container-results">
-		<div class="item" onclick='selectBook()'>
-			<img src=""></img>
-			<div class="bookInfo">
-				<p class="title">Title
-				</p>
-				<p class="author">Bill Bob, Bobby Bill
-				</p>
-				<p class="ed">3
-				</p>
-				<p class="isbn">0123456789
-				</p>
-			</div>
-		</div>
 	</div>
-
 </body>
 </html>
 <script>
@@ -75,9 +61,9 @@
 	function renderResults(response){
 		$r = JSON.parse(response);
 		$head = '<div class="item" onclick="selectBook()">'+
-			'<img src=""></img>'+
+			'<img class="img" src=""></img>'+
 			'<div class="bookInfo">';
-		$tail='</div></div>';
+		$tail='</div></div><hr>';
 		for($i = 0; $i<$r.length; $i++){
 			$html=$head;
 			$.each($r[$i], function(key, value){
@@ -94,17 +80,19 @@
 	}
 	function selectBook(){
 		var info={
-			title: this.$('title'),
-			author: this.$('author'),
-			ed: this.$('ed'),
-			isbn: this.$('isbn')
+			title: $('.title').value,
+			author: this.$('.author').value,
+			ed: this.$('.ed').value,
+			isbn: this.$('.isbn').value
 		};
+		JSON.stringify(info);
 		console.log(info);	
-		$.ajax({
-		type: "GET",
-		url: "book.php",
-		data: {'info': info}
-		});
+		// $.ajax({
+		// 	type: "GET",
+		// 	url: "book.php",
+		// 	dataType: 'JSON',
+		// 	data: info
+		// });
 	}
 	
 
