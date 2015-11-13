@@ -142,3 +142,12 @@ hr{
 	margin-left: 5px;
 	text-align: center;
 }
+#email{
+	padding-top: 7px;
+}
+#price{
+	padding-top: 7px;
+}
+#isbnInput{
+	padding-top: 5px;
+}

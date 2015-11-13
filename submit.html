@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="type/css" href="style.css">
+</head>
+
+<body>
+	<div class="navbar navbar-default nav-bar-fixed-top navbar-custom" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: white;">SCU Book Exchange</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a style="color: white;" href="#">Home</a></li>
+					<li><a style="color: white;" href="#">Sell</a></li>
+					<li class="dropdown">
+						<a href="#" style="color: white;" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a style="color:white;" href="#">The Developers</a></li>
+								<li><a style="color:white;" href="#">Contact</a></li>
+							</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="form" class="container container-custom">
+	<div id="fillables">
+		<div id="header">
+			<h1 id="title">Sell</h1>
+			<p id="details">Please enter the following information to post your book</p>
+		</div>
+		<div id="fillOut">
+			<form id="submittionform">
+				<p id="isbnInput">ISB Number: <input type="text"><br></p>
+			<div id="radio">
+				Book Condition (Select one)<br>
+				<input type="radio" name="condition" value="poor"> Poor
+				<br>
+				<input type="radio" name="condition" value="okay"> Okay
+				<br>
+				<input type="radio" name="condition" value="good"> Good
+				<br>
+				<input type="radio" name="condition" value="likeNew"> Like New
+				<br>
+			</div>
+			<p id="email">Your e-mail address: <input type="text"> @scu.edu <input type="button" value="Send Verification Code"></p>
+
+			<p id="price">Listing Price: $<input type="text"></p>
+			<input type="text" placeholder="Verification Code">
+			<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+	</div>
+</body>
