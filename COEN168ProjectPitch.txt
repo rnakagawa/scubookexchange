@@ -1,0 +1,25 @@
+﻿Leland Wong, Tyler Selewicz 
+COEN 168L
+
+
+Project Pitch - SCU Book Exchange
+
+
+Our application will connect Santa Clara students together so they can buy and sell used books to one another in order to reduce their overall expenses on books.
+
+
+Background:
+        College students must spend hundreds of dollars on books that they often only need for a few months.  Many students end up with these books sitting in their closet after they finish the class because there is no easy way for them to sell them to younger students taking the same classes.  
+
+
+Our Solution:
+        We will be building a web-based system that will perform two main functions. First, our system will allow students to post any old books that they would like to sell. Second, the system will allow students to search for the books needed for their upcoming quarter and get in contact with sellers to purchase the books. Students will be able to search for books by several parameters including name, author, and ISBN number, and then peruse the list of students that are trying to sell the book they are looking for. Students will also be able to enter the courses they are taking and search all the required books for these courses. By connecting students with other Santa Clara students, they can be more confident that they are getting the correct version of the book because the person selling it will have used it for the exact same class. 
+
+
+Technologies Used:
+        In order to implement a web responsive design, we will utilize the Twitter Bootstrap library as well as a hybrid liquid format layout. The Bootstrap library will help with the styling and design of our website. Javascript and JQuery will be used to improve the efficiency and interactivity of the system. Implementing AJAX calls will make help improve the user’s experience by making content change instantaneously. The system will also utilize the JSON framework for form submissions and retrieval for information stored in our database.
+        We will also be implementing a search system similar to Amazon’s product search. It will group item searches by the textbook title first, then allow the user to search through a list of students selling only that specific textbook. 
+
+
+Competitors:
+        Several solutions already exist for selling and buying used textbooks, but none as simple are our solution. Amazon.com, one of the most popular ways for students to sell old books, requires people to package and ship the books to them, and other big online solutions require this as well. This may seem simple, but to busy college students it can often be a deal breaker. Local solutions like free and for sale Facebook groups are not specific to books. The listings on these groups are not easily searchable, so if a buyer does not see a listing the day it is posted it is unlikely they will ever come across it again. SCUbooks.com provides students with an easy way to search for books for all of their classes, but it only provides listings from big websites such as Amazon, Chegg, and Half.com. It does not provide any option for students wishing to buy and sell locally.
