@@ -99,21 +99,36 @@
 </body>
 </html>
 <script>
-//	$isbn = $_GET['isbn'];
-	$isbn = "0123456789";
-	$(document).ready(function(){
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+	// $isbn = "0123456789";
+	function getSellers(isbn){
 			$.ajax({
 			type: "GET",
 			url: "getSellers.php",
-			data: { 'isbn': $isbn.toString() }
+			data: { 'isbn': isbn.toString() }
 		}).success(function(response){
 			readSellers(response);
 		});
-	});
+	}
 	function readSellers(response){
 		// $.each(response, function(key, value){
 
 		// })
 		console.log(response);
 	}
+	var isbn = getUrlParameter('isbn');
+	getSellers(isbn);
 </script>

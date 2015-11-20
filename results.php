@@ -6,6 +6,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="type/css" href="style.css">
+	<script src='results.js'></script>
 </head>
 <body>
 	<div class="navbar navbar-default nav-bar-fixed-top navbar-custom" role="navigation">
@@ -49,54 +50,11 @@
 </html>
 <script>
 	$test="";
-	$(document).ready(function(){
-		$.ajax({
-			type: 'GET',
-			url: 'retrieveResults.php',
-			data: $test
-		}).success(function(response){
-			renderResults(response);
-		});
-	});
-	function renderResults(response){
-		$r = JSON.parse(response);
-		$tail='</div></div><hr>';
-		for($i = 0; $i<$r.length; $i++){
-			$head = '<div class="item" onclick="selectBook(W'+$r[$i].isbn[0]+')" id="W'+$r[$i].isbn[0]+'">'+
-				'<img class="img" src=""></img>'+
-				'<div class="bookInfo">';
-			$html=$head;
-			$.each($r[$i], function(key, value){
-				if(value[1]){
-					$html+=('<p class="'+key+'">'+value[0]+', '+value[1]+'</p>');
-				}
-				else{
-					$html+=('<p class="'+key+'">'+value[0]+'</p>');
-				}
-			});
-			$html+=$tail;
-			$('#results').append($html);
-		}
-	}
-	function selectBook(elem){
-		$isbn=elem.getElementsByClassName('isbn')[0].innerHTML;
-		$author=elem.getElementsByClassName('author')[0].innerHTML;
-		$ed=elem.getElementsByClassName('ed')[0].innerHTML;
-		$title=elem.getElementsByClassName('title')[0].innerHTML;
-		var info={
-			title: $title,
-			author: $author,
-			ed: $ed,
-			isbn: $isbn
-		};
-		JSON.stringify(info);
-		$.ajax({
-			type: "GET",
-			url: "book.php",
-			dataType: 'JSON',
-			data: info
-		});
-	}
+	$isbn = "9780521880374";
+	$xml="";
 
+
+searchISBN();
+retrieveByISBN();
 
 </script>
