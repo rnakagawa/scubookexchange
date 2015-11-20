@@ -3,9 +3,6 @@ function log(obj) {
     $('#response').text(JSON.stringify(obj));
 }
 
-// create a new instance of the Mandrill class with your API key
-var m = new mandrill.Mandrill('Irm8NhatVNDLrlPp-N2aCw');
-
 function makeid()
 {
   var text = "";
@@ -26,36 +23,39 @@ function getEmail() {
   }
 }
 
-// create a variable for the API call parameters
-var params = {
-    "message": {
-        "from_email":"scubookexchange@gmail.com",
-        "to":[{"email":$('#email').val() + '@scu.edu'}],
-        "subject": "Sending a text email from the Mandrill API",
-        "html": "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>",
-        "autotext": true,
-        "track_opens": true,
-        "track_clicks": true,
-        "merge_vars": [
-            {
-                "rcpt": $('#email').val() + '@scu.edu',
-                "vars": [
-                    {
-                        "name": "USER",
-                        "content": $('#email').val() + '@scu.edu'
-                    },
-                    {
-                        "name": "CODE",
-                        "content": makeid()
-                    }
-                ]
-            }
-        ]
-    }
-};
-
 function sendTheMail() {
 // Send the email!
+// create a new instance of the Mandrill class with your API key
+    var m = new mandrill.Mandrill('Irm8NhatVNDLrlPp-N2aCw');
+    var email = getEmail();
+
+// create a variable for the API call parameters
+    var params = {
+        "message": {
+            "from_email":"scubookexchange@gmail.com",
+            "to":[{"email":email}],
+            "subject": "scubookexchange",
+            "html": "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>",
+            "autotext": true,
+            "track_opens": true,
+            "track_clicks": true,
+            "merge_vars": [
+                {
+                    "rcpt": email,
+                    "vars": [
+                        {
+                            "name": "USER",
+                            "content": email
+                        },
+                        {
+                            "name": "CODE",
+                            "content": makeid()
+                        }
+                    ]
+                }
+            ]
+        }
+    };
 
     m.messages.send(params, function(res) {
         log(res);
