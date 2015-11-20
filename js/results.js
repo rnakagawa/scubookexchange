@@ -1,20 +1,20 @@
 function searchISBN(){
   $.ajax({
     type: 'GET',
-    url: 'SearchByISBN.php',
+    url: 'searchISBN.php',
     dataType: 'text',
     data: {'isbn': $isbn}
   }).success(function(response){
     $xml=response;
-    console.log($xml);
   });
 }
 function retrieveByISBN(){
   $.ajax({
     type: 'GET',
     url: 'retrieveResults.php',
-    data: $xml
+    data: {'xml': $xml}
   }).success(function(response){
+    console.log(response);
     renderResults(response);
   });
 }
@@ -50,6 +50,6 @@ function selectBook(elem){
     isbn: $isbn
   };
   info=JSON.stringify(info);
-  window.location.href='book.php?'+info;
-  window.location.href="book.php?title=$title&author=$author&ed=$ed&isbn=$isbn";
+  // window.location.href='book.php?'+info;
+  window.location.href="sellers.php?title=$title&author=$author&ed=$ed&isbn=$isbn";
 }

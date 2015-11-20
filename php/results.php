@@ -51,7 +51,7 @@
 <script>
 	$test="";
 	$isbn = "9780521880374";
-	$xml="";
+	$xml='';
 
 
 searchISBN();
