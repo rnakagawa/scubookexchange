@@ -17,11 +17,19 @@ function makeid()
   return text;
 }
 
+function getEmail() {
+  if(document.forms.length){
+    var form = document.forms[0];
+    var email = form.elements["email"].value;
+    return email;
+  }
+}
+
 // create a variable for the API call parameters
 var params = {
     "message": {
         "from_email":"scubookexchange@gmail.com",
-        "to":[{"email":"rrnroy94@gmail.com"}],
+        "to":[{"email":getEmail()}],
         "subject": "Sending a text email from the Mandrill API",
         "html": "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>",
         "autotext": true,
@@ -29,11 +37,11 @@ var params = {
         "track_clicks": true,
         "merge_vars": [
             {
-                "rcpt": "rrnroy94@gmail.com",
+                "rcpt": getEmail(),
                 "vars": [
                     {
                         "name": "USER",
-                        "content": "Ryan"
+                        "content": getEmail()
                     },
                     {
                         "name": "CODE",
