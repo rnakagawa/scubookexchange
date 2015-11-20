@@ -6,6 +6,17 @@ function log(obj) {
 // create a new instance of the Mandrill class with your API key
 var m = new mandrill.Mandrill('Irm8NhatVNDLrlPp-N2aCw');
 
+function makeid()
+{
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for( var i=0; i < 5; i++ ){
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}
+
 // create a variable for the API call parameters
 var params = {
     "message": {
@@ -26,7 +37,7 @@ var params = {
                     },
                     {
                         "name": "CODE",
-                        "content": "abc123"
+                        "content": makeid()
                     }
                 ]
             }
