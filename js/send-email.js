@@ -21,6 +21,7 @@ function getEmail() {
   if(document.forms.length){
     var form = document.forms[0];
     var email = form.elements["email"].value;
+    email += "@scu.edu";
     return email;
   }
 }
