@@ -30,7 +30,7 @@ function getEmail() {
 var params = {
     "message": {
         "from_email":"scubookexchange@gmail.com",
-        "to":[{"email":getEmail()}],
+        "to":[{"email":$('#email').val() + '@scu.edu'}],
         "subject": "Sending a text email from the Mandrill API",
         "html": "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>",
         "autotext": true,
@@ -38,11 +38,11 @@ var params = {
         "track_clicks": true,
         "merge_vars": [
             {
-                "rcpt": getEmail(),
+                "rcpt": $('#email').val() + '@scu.edu',
                 "vars": [
                     {
                         "name": "USER",
-                        "content": getEmail()
+                        "content": $('#email').val() + '@scu.edu'
                     },
                     {
                         "name": "CODE",
