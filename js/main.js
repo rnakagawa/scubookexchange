@@ -93,8 +93,7 @@ function contactSeller(id){
     url: 'php/getEmail.php',
     data: {'sellerId': $sellerId}
   }).success(function(response){
-    $seller=response;
-    console.log($seller);
+    $sellerId=response;
     sendTheMail('lrwong@scu.edu', $sellerId, 1);
   });
 }
