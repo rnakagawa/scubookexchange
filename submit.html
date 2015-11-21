@@ -1,13 +1,11 @@
-<html>
+<!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
-	<script src="js/send-email.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="type/css" href="css/style.css">
+	<link rel="stylesheet" type="type/css" href="style.css">
 </head>
 
 <body>
@@ -43,8 +41,8 @@
 			<p id="details">Please enter the following information to post your book</p>
 		</div>
 		<div id="fillOut">
-			<form id="submittionform">
-				<p id="isbnInput">ISB Number: <input type="text"><br></p>
+			<form id="submittionform" method="post" action="grabFormData.php">
+				<p id="isbnInput">ISB Number: <input type="text" name="isbnInput"><br></p>
 			<div id="radio">
 				Book Condition (Select one)<br>
 				<input type="radio" name="condition" value="poor"> Poor
@@ -56,14 +54,12 @@
 				<input type="radio" name="condition" value="likeNew"> Like New
 				<br>
 			</div>
-			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="sendTheMail()"></p>
-
-			<p id="price">Listing Price: $<input type="text"></p>
-			<input type="text" placeholder="Verification Code">
+			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code"></p>
+			<p id="price">Listing Price: $<input type="text" name="price"></p>
+			<input type="text" placeholder="Verification Code" name="verificationCode">
 			<input type="submit" value="Submit">
 			</form>
 		</div>
 	</div>
 	</div>
 </body>
-</html>
