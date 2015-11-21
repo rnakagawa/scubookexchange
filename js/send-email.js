@@ -21,7 +21,7 @@ function getEmail() {
     email += "@scu.edu";
     //return email;
 
-    sendTheMail(email);
+    sendTheMail(null,email,0);
   }
 }
 
