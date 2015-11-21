@@ -25,35 +25,60 @@ function getEmail() {
   }
 }
 
-function sendTheMail(e) {
+function sendTheMail(buyer,seller,flag) {
 // Send the email!
 // create a new instance of the Mandrill class with your API key
     var m = new mandrill.Mandrill('Irm8NhatVNDLrlPp-N2aCw');
-    var email = e;
+    var email = seller;
+    var potential = buyer;
+
+    //means verification code email
+    if(!flag){
+      var message = "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>";
+      var fillData [
+          {
+              "name": "USER",
+              "content": email
+          },
+          {
+              "name": "CODE",
+              "content": makeid()
+          }
+      ];
+      var subject = "Verification Code";
+    }
+    //notification for seller that there is a potential buyer
+    else {
+      var message = "<p>Hey *|USER|*, *|BUYER|* is interested in your book. Email the potential buyer or if the book has already been sold then please take the post down with the verification code you received upon initial posting";
+      var fillData [
+          {
+              "name": "USER",
+              "content": email
+          },
+          {
+              "name": "BUYER",
+              "content": potential
+          }
+      ];
+      var subject = "Potential Book Buyer";
+    }
+
+
 
 // create a variable for the API call parameters
     var params = {
         "message": {
             "from_email":"scubookexchange@gmail.com",
             "to":[{"email":email}],
-            "subject": "scubookexchange",
-            "html": "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>",
+            "subject": subject,
+            "html": message,
             "autotext": true,
             "track_opens": true,
             "track_clicks": true,
             "merge_vars": [
                 {
                     "rcpt": email,
-                    "vars": [
-                        {
-                            "name": "USER",
-                            "content": email
-                        },
-                        {
-                            "name": "CODE",
-                            "content": makeid()
-                        }
-                    ]
+                    "vars": fillData
                 }
             ]
         }
