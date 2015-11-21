@@ -61,6 +61,7 @@ function sendTheMail(buyer,seller,flag) {
           }
       ];
       var subject = "Potential Book Buyer";
+      console.log('potential buyer');
     }
 
 
