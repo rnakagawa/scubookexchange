@@ -19,15 +19,17 @@ function getEmail() {
     var form = document.forms[0];
     var email = form.elements["email"].value;
     email += "@scu.edu";
-    return email;
+    //return email;
+
+    sendTheMail(email);
   }
 }
 
-function sendTheMail() {
+function sendTheMail(e) {
 // Send the email!
 // create a new instance of the Mandrill class with your API key
     var m = new mandrill.Mandrill('Irm8NhatVNDLrlPp-N2aCw');
-    var email = getEmail();
+    var email = e;
 
 // create a variable for the API call parameters
     var params = {
