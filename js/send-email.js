@@ -35,7 +35,7 @@ function sendTheMail(buyer,seller,flag) {
     //means verification code email
     if(!flag){
       var message = "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>";
-      var fillData [
+      var fillData = [
           {
               "name": "USER",
               "content": email
@@ -50,7 +50,7 @@ function sendTheMail(buyer,seller,flag) {
     //notification for seller that there is a potential buyer
     else {
       var message = "<p>Hey *|USER|*, *|BUYER|* is interested in your book. Email the potential buyer or if the book has already been sold then please take the post down with the verification code you received upon initial posting";
-      var fillData [
+      var fillData = [
           {
               "name": "USER",
               "content": email
