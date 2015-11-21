@@ -41,10 +41,11 @@
 			<p>Please enter all of the following information about your book</p>
 		</div>
 		<div>
-			<form>
-				<p>Title: <input type="text"><br></p>
-				<p>Author: <input type="text"><br></p>
-				<p>Edition: <input type="text"><br></p>
+			<form action="grabFormData.php">
+				<p>Title: <input type="text" name="title"><br></p>
+				<p>Author: <input type="text" name="author"><br></p>
+				<p>Author 2: <input type="text" name="author2"><br></p>
+				<p>Edition: <input type="text" name="edition"><br></p>
 				<p>Which SCU class did you use this book for? <input type="text"><br></p>
 			<div>
 				Book Condition (Select one)<br>
@@ -57,10 +58,10 @@
 				<input type="radio" name="condition" value="likeNew"> Like New
 				<br>
 			</div>
-			<p id="email">Your e-mail address: <input type="text"> @scu.edu <input type="button" value="Send Verification Code"></p>
+			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code"></p>
 
-			<p id="price">Listing Price: $<input type="text"></p>
-			<input type="text" placeholder="Verification Code">
+			<p id="price">Listing Price: $<input type="text" name="price"></p>
+			<input type="text" placeholder="Verification Code" name="verificationCode">
 			<input type="submit" value="Submit">
 			</form>
 		</div>
