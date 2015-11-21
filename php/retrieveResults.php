@@ -1,7 +1,6 @@
 <?php
 
-$xmlString=$_GET['xml'];
-echo $xmlString;
+	$xmlString=$_POST['xml'];
 	// var_dump(libxml_use_internal_errors(true));
 	$xmlString=preg_replace('/&(?!#?[a-z0-9]+;)/', '&amp;', $xmlString);
 	$xml = simplexml_load_string($xmlString);
@@ -13,12 +12,10 @@ echo $xmlString;
     class result{
         public $title;
         public $author;
-        public $ed;
         public $isbn;
-    	public function __construct($title, $author, $ed, $isbn){
+    	public function __construct($title, $author, $isbn){
     		$this->title = $title;
     		$this->author = $author;
-    		$this->ed = $ed;
     		$this->isbn = $isbn;
     	}
     }
@@ -26,10 +23,9 @@ echo $xmlString;
     for($i = 0; $i < sizeof($xml->Items); $i++){
       $author=$xml->Items->Item->ItemAttributes->Author;
 		$title=$xml->Items->Item->ItemAttributes->Title;
-		$isbn=$xml->Items->Item->ItemAttributes->ISBN;
-		$ed=$xml->Items->Item->ItemAttributes->Edition;
-    	$results[$i] = new result($title, $author, $ed, $isbn);
+		$isbn=$xml->Items->Item->ItemAttributes->EAN;
+    	$results[$i] = new result($title, $author, $isbn);
     }
-    echo json_encode($results);
+    print_R(json_encode($results));
 
 ?>

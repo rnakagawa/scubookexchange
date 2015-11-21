@@ -5,8 +5,8 @@
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="type/css" href="style.css">
-	<script src='js/results.js'></script>
+	<link rel="stylesheet" type="type/css" href="css/style.css">
+	<script src='js/main.js'></script>
 </head>
 <body>
 	<div class="navbar navbar-default nav-bar-fixed-top navbar-custom" role="navigation">
@@ -49,12 +49,5 @@
 </body>
 </html>
 <script>
-	$test="";
-	$isbn = "9780521880374";
-	$xml='';
-
-
-searchISBN();
-retrieveByISBN();
-
+$(document).ready(getResults());
 </script>
