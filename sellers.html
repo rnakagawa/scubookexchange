@@ -41,19 +41,17 @@
 		<div class="info">
 			<img src=""></img>
 			<div class="bookInfo">
-				<p class="title">Title
+				<p id="title" class='title'>
 				</p>
-				<p class="author">Bill Bob, Bobby Bill
+				<p id="author" class='author'>
 				</p>
-				<p class="ed">3
-				</p>
-				<p class="isbn">0123456789
+				<p id="isbn" class='isbn'>
 				</p>
 			</div>
 		</div>
 	</div>
-	<div class="container pop sellers">
-		<div class="seller ">
+	<div id="sellers" class="container pop sellers">
+		<div class="seller">
 			<p class="header">
 				PRICE
 			</p>
@@ -64,29 +62,10 @@
 				CONTACT SELLER
 			</p>
 		</div>
-		<div class ="seller">
-			<p class="price">
-				$50
-			</p>
-			<p class="condition">
-				good
-			</p>
-			<p>
-				<button class="buy" onclick='contactSeller(2)'>Contact Seller</button>
-			</p>
-		</div>
-		
-
 </body>
 </html>
 <script>
-
-	function readSellers(response){
-		// $.each(response, function(key, value){
-
-		// })
-		console.log(response);
-	}
 	var isbn = getUrlParameter('isbn');
+	getBookInfo();
 	getSellers(isbn);
 </script>

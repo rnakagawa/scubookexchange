@@ -57,10 +57,10 @@ function selectBook(elem){
     title: $title,
     author: $author,
     isbn: $isbn
-};
-info=JSON.stringify(info);
-// window.location.href='book.php?'+info;
-window.location.href="sellers.html?title="+$title+"&author="+$author+"&isbn="+$isbn;
+  };
+  info=JSON.stringify(info);
+  // window.location.href='book.php?'+info;
+  window.location.href="sellers.html?title="+$title+"&author="+$author+"&isbn="+$isbn;
 }
 var getUrlParameter = function getUrlParameter(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -82,18 +82,47 @@ function getSellers(isbn){
 		url: "php/getSellers.php",
 		data: { 'isbn': isbn.toString() }
 	}).success(function(response){
-		// readSellers(response);
+		loadSellers(response);
 	});
+}
+
+function loadSellers(response){
+  $data=JSON.parse(response);
+  if($data.length==0){
+    $('#sellers').html('Sorry, no one currently has this book for sale');
+  }
+  else{
+    $.each($data, function(seller, info){
+      $price = info['price'];
+      $condition = info['condition'];
+      $sellerId = info['sellerId'];
+      $html='<div class="seller"><p class="price">$'+$price
+        +'</p><p class="condition">'+$condition
+        +'</p><p><button class="buy" onclick="contactSeller('+$sellerId+')">Contact Seller</button></p></div>';
+      $('#sellers').append($html);
+    });
+  }
 }
 
 function contactSeller(id){
   $sellerId = id;
+  var buyer = prompt("Please enter your Novell ID");
   $.ajax({
     type: 'POST',
     url: 'php/getEmail.php',
     data: {'sellerId': $sellerId}
   }).success(function(response){
-    $sellerId=response;
-    sendTheMail('lrwong@scu.edu', $sellerId, 1);
+    $sellerEmail=response;
+    buyer=buyer+"@scu.edu";
+    sendTheMail(buyer, $sellerEmail, 1);
   });
+}
+
+function getBookInfo(){
+  $title = getUrlParameter('title');
+  $author = getUrlParameter('author');
+  $isbn = getUrlParameter('isbn');
+  $('#title').html($title);
+  $('#author').html($author);
+  $('#isbn').html($isbn);
 }
