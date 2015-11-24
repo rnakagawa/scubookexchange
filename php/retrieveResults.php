@@ -20,11 +20,14 @@
     	}
     }
     $results=[];
-    for($i = 0; $i < sizeof($xml->Items); $i++){
-      $author=$xml->Items->Item->ItemAttributes->Author;
-		$title=$xml->Items->Item->ItemAttributes->Title;
-		$isbn=$xml->Items->Item->ItemAttributes->EAN;
+    $size=$xml->Items->Item->count();
+    $i=0;
+    while($i < $size && $i < 50){
+        $author=$xml->Items->Item[$i]->ItemAttributes->Author;
+		$title=$xml->Items->Item[$i]->ItemAttributes->Title;
+		$isbn=$xml->Items->Item[$i]->ItemAttributes->EAN;
     	$results[$i] = new result($title, $author, $isbn);
+        $i++;
     }
     print_R(json_encode($results));
 
