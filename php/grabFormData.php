@@ -41,7 +41,7 @@ if(empty($title)&&empty($author)&&empty($edition))	//this is just to tell which 
 
 if ($db_found && $form) 
 {
-	$SQL = "INSERT INTO $dbanme(bookIsbn, email, price, condition) VALUES ($isbn, $email, $price, $condition)";
+	$SQL = "INSERT INTO $temp(isbn, email, price, condition) VALUES ($isbn, $email, $price, $condition)";
 	$result = mysql_query($SQL);
 	mysql_close($conn);
 	echo "your data has been entered";
@@ -49,7 +49,7 @@ if ($db_found && $form)
 
 else if ($db_found && !$form)
 {
-	$SQL = "INSERT INTO $dbname(bookIsbn, email, price, title, author1, edition, condition) VALUES ($isbn, $email, $price, $condition, $title, $author, $author2, $edition, $condition)";
+	$SQL = "INSERT INTO $dbname(isbn, email, price, title, author1, edition, condition) VALUES ($isbn, $email, $price, $condition, $title, $author, $author2, $edition, $condition)";
 	$result = mysql_query($SQL);
 	mysql_close($conn);
 	echo "your data has been entered";
