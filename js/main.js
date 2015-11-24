@@ -109,7 +109,8 @@ function getSellers(isbn){
 function loadSellers(response){
   $data=JSON.parse(response);
   if($data.length==0){
-    $('#sellers').html('Sorry, no one currently has this book for sale');
+    $('#sellers').html('Sorry, no one currently has this book for sale.');
+    $('#sellers').css({'text-align': 'center', 'font-size': '14pt', 'padding-top': '10px'});
   }
   else{
     $.each($data, function(seller, info){
