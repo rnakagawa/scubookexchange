@@ -14,23 +14,53 @@ function makeid()
   return text;
 }
 
+function getFormDataNotFound(){
+  if(document.forms.length){
+    var form = document.forms[0];
+    var title = form.elements["title"].value;
+    var author = form.elements["author"].value;
+    var author2 = form.elements["author2"].value;
+    var edition = form.elements["edition"].value;
+    var condition = form.elements["condition"].value;
+    var email = form.elements["email"].value;
+    email += "@scu.edu";
+    var price = form.elements["price"].value;
+    var id = makeid();
+
+    var formData = {
+      title: title,
+      author: author,
+      author2: author2,
+      edition: edition,
+      condition: condition,
+      email: email,
+      price: price,
+      id: id
+    };
+
+    sendTheMail(null,email,0,id);
+  }
+}
+
 function getEmail() {
   if(document.forms.length){
     var form = document.forms[0];
     var email = form.elements["email"].value;
     email += "@scu.edu";
     //return email;
+    var id = makeid();
 
-    sendTheMail(null,email,0);
+    sendTheMail(null,email,0,id);
   }
 }
 
-function sendTheMail(buyer,seller,flag) {
+function sendTheMail(buyer,seller,flag,id) {
 // Send the email!
 // create a new instance of the Mandrill class with your API key
     var m = new mandrill.Mandrill('Irm8NhatVNDLrlPp-N2aCw');
     var email = seller;
     var potential = buyer;
+    var verification = id;
 
     //means verification code email
     if(!flag){
@@ -42,7 +72,7 @@ function sendTheMail(buyer,seller,flag) {
           },
           {
               "name": "CODE",
-              "content": makeid()
+              "content": verification
           }
       ];
       var subject = "Verification Code";

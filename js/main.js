@@ -135,7 +135,7 @@ function contactSeller(id){
   }).success(function(response){
     $sellerEmail=response;
     buyer=buyer+"@scu.edu";
-    sendTheMail(buyer, $sellerEmail, 1);
+    sendTheMail(buyer, $sellerEmail, 1, null);
   });
 }
 
@@ -148,3 +148,58 @@ function getBookInfo(){
   $('#isbn').html($isbn);
 }
 
+
+function checkAmazon(){
+  if(document.forms.length){
+    var form = document.forms[0];
+    var isbn = form.elements["isbnInput"].value;
+  }
+  $.ajax({
+    type: 'GET',
+    url: 'php/searchISBN.php',
+    dataType: 'text',
+    data: {'isbn': isbn}
+  }).success(function(response){
+    handleAmazonCheck(response);
+  });
+}
+
+function handleAmazonCheck(xml){
+  $.ajax({
+    type: 'POST',
+    url: 'php/retrieveResults.php',
+    data: {'xml': xml}
+  }).success(function(response){
+    foundOrNot(response);
+  });
+}
+
+function foundOrNot(response){
+  var num = JSON.parse(response);
+  //not found so redirect to different page
+  if (num.length == 0) {
+    window.location.href = "../ISBNnotfound.html";
+  }
+  //found book so grab content, insert into temp table and send verification code
+  else {
+    //grab data from 'num' variable to enter into temp table
+    //var title =
+    //var author =
+    //var isbn =
+    //var id = makeid();
+    var info={
+      title: title,
+      author: author,
+      isbn: isbn,
+      id: id
+    };
+    
+    $.ajax({
+      type: 'GET',
+      url: 'php/insertTemp.php',
+      data: {'info': info}
+    }).success(function(){
+      sendTheMail(buyer,seller,0,id)
+    });
+  }
+}

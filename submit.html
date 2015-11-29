@@ -6,9 +6,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="type/css" href="css/style.css">
-		<script type='text/javascript' src='https://mandrillapp.com/api/docs/js/mandrill.js'></script>
-	<script src='js/main.js'></script>
+	<script type='text/javascript' src='https://mandrillapp.com/api/docs/js/mandrill.js'></script>
 	<script src='js/send-email.js'></script>
+	<script src='js/main.js'></script>
+
 </head>
 
 <body>
@@ -57,7 +58,7 @@
 				<input type="radio" name="condition" value="likeNew"> Like New
 				<br>
 			</div>
-			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="getEmail()"></p>
+			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="checkAmazon()"></p>
 			<p id="price">Listing Price: $<input type="text" name="price"></p>
 			<input type="text" placeholder="Verification Code" name="verificationCode">
 			<input type="submit" value="Submit">
