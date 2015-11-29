@@ -211,7 +211,7 @@ function foundOrNot(response){
       url: 'php/insertTemp.php',
       data: {'info': info}
     }).success(function(){
-      // sendTheMail('' , info.email, 0, id);
+      sendTheMail('' , info.email, 0, id);
       //enable the submit button
     });
   }
