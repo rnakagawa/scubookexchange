@@ -52,19 +52,18 @@ function renderResults(response){
     $author= $r[$i].author;
     $image = $r[$i].image[0];
     $edition = $r[$i].edition;
-    // $html = 
-
-
-    $html = '<div class="item" onclick="selectBook(W'+$r[$i].isbn[0]+')" id="W'+$r[$i].isbn[0]+'">'+
+    $html = '<div class="item" onclick="selectBook(W'+$r[$i].isbn[0]+')">'+
       '<img class="img" src="' + $r[$i].image[0]+ '"></img>'+
       '<div class="bookInfo">';
 
     $.each($r[$i], function(key, value){
-      if(value[1]){
-        $html+=('<p class="'+key+'">'+value[0]+', '+value[1]+'</p>');
-      }
-      else{
-        $html+=('<p class="'+key+'">'+value[0]+'</p>');
+      if(key != 'image'){
+        if(value[1]){
+          $html+=('<p class="'+key+'">'+value[0]+', '+value[1]+'</p>');
+        }
+        else{
+          $html+=('<p class="'+key+'">'+value[0]+'</p>');
+        }
       }
     });
 
