@@ -12,22 +12,32 @@
     class result{
         public $title;
         public $author;
+        public $ed;
         public $isbn;
-    	public function __construct($title, $author, $isbn){
+        public $image;
+    	public function __construct($title, $author, $ed, $isbn, $image){
     		$this->title = $title;
     		$this->author = $author;
+            $this->ed = $ed;
     		$this->isbn = $isbn;
+            $this->image = $image;
     	}
     }
     $results=[];
     $size=$xml->Items->Item->count();
     $i=0;
     while($i < $size && $i < 50){
-        $author=$xml->Items->Item[$i]->ItemAttributes->Author;
-		$title=$xml->Items->Item[$i]->ItemAttributes->Title;
-		$isbn=$xml->Items->Item[$i]->ItemAttributes->EAN;
-    	$results[$i] = new result($title, $author, $isbn);
-        $i++;
+        if(strcmp($xml->Items->Item[$i]->ItemAttributes->EAN, '')!=0){
+            $author=$xml->Items->Item[$i]->ItemAttributes->Author;
+    		$title=$xml->Items->Item[$i]->ItemAttributes->Title;
+    		$isbn=$xml->Items->Item[$i]->ItemAttributes->EAN;
+            $image=$xml->Items->Item[$i]->MediumImage->URL;
+            $ed=$xml->Items->Item[$i]->ItemAttributes->Edition;
+        	$results[$i] = new result($title, $author, $ed, $isbn, $image);
+            $i++;
+        }
+        else
+            $i++;
     }
     print_R(json_encode($results));
 

@@ -61,7 +61,6 @@ function sendTheMail(buyer,seller,flag,id) {
     var email = seller;
     var potential = buyer;
     var verification = id;
-
     //means verification code email
     if(!flag){
       var message = "<p>Hey *|USER|*, your verification code is: *|CODE|*.</p>";

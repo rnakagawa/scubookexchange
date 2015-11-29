@@ -24,9 +24,10 @@
 	else{
 		while($row=$result->fetch_assoc()){
 			$sellers[$i] = new seller();
-			$sellers[$i]->sellerId=$row['sellerId'];
+			$sellers[$i]->sellerId=$row['vCode'];
 			$sellers[$i]->bookIsbn = $row['isbn'];
 			$sellers[$i]->title=$row['title'];
+			$sellers[$i]->edition=$row['edition'];
 			$sellers[$i]->email = $row['email'];
 			$sellers[$i]->condition = $row['condition'];
 			$sellers[$i]->price=$row['price'];

@@ -41,27 +41,26 @@
 	<div id="form" class="container container-custom">
 	<div id="fillables">
 		<div id="header">
-			<h1 id="title">Sell</h1>
-			<p id="details">Please enter the following information to post your book</p>
+			<h1 id="title">Sell a Book</h1>
+			<p id="details">Please enter the following information to list your book for sale</p>
 		</div>
 		<div id="fillOut">
-			<form id="submittionform" method="post" action="grabFormData.php">
+			<form id="submittionform" method="post" action="php/grabFormData.php">
 				<p id="isbnInput">ISB Number: <input type="text" name="isbnInput"><br></p>
-			<div id="radio">
-				Book Condition (Select one)<br>
-				<input type="radio" name="condition" value="poor"> Poor
-				<br>
-				<input type="radio" name="condition" value="okay"> Okay
-				<br>
-				<input type="radio" name="condition" value="good"> Good
-				<br>
-				<input type="radio" name="condition" value="likeNew"> Like New
-				<br>
-			</div>
-			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="checkAmazon()"></p>
-			<p id="price">Listing Price: $<input type="text" name="price"></p>
-			<input type="text" placeholder="Verification Code" name="verificationCode">
-			<input type="submit" value="Submit">
+				<span>Condition: </span>
+				<select id="condition" name='condition'>
+					<option selected value='poor'>Poor</option>
+					<option value='okay'>Okay</option>
+					<option value='good'>Good</option>
+					<option value='new'>Like New</option>
+				</select>
+				<p><span>Novell ID:</span><input type='text' id='email' name='email'></input>
+				<!-- <p id="email">Your Novell ID: <input type="text" name="email"> -->
+				<p>Listing Price: $<input id='price' type="text" name="price"></p>
+				<input type="button" value="Send Verification Code" onclick="checkAmazon()"></p>
+				
+				<input type="text" placeholder="Verification Code" name="verificationCode">
+				<input type="submit" value="Submit">
 			</form>
 		</div>
 	</div>
