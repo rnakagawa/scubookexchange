@@ -215,3 +215,20 @@ function foundOrNot(response){
     });
   }
 }
+
+function matchVCode(){
+  $check = $('#vCode').val();
+  $.ajax({
+    type: 'GET',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/matchVCode.php',
+    data: {'code': $check}
+  }).success(function(response){
+    if(response==='true'){
+      alert('Your book has been listed for sale!');
+    }
+    else{
+      alert('Error, the verification code does not match. Please try again.');
+    }
+  })
+
+}
