@@ -77,13 +77,6 @@ function selectBook(elem){
   $author=elem.getElementsByClassName('author')[0].innerHTML;
   $edition = elem.getElementsByClassName('ed')[0].innerHTML;
   $title=elem.getElementsByClassName('title')[0].innerHTML;
-  // var info={
-  //   title: $title,
-  //   author: $author,
-  //   edition: $edition,
-  //   isbn: $isbn
-  // };
-  // info=JSON.stringify(info);
   window.location.href="sellers.html?title="+$title+"&author="+$author+"&edition="+$edition+"&isbn="+$isbn;
 }
 
