@@ -3,38 +3,42 @@
 	$details=$_POST['info'];
 	$title = filter_var($details['title'], FILTER_SANITIZE_STRING);
 	$authorOne=filter_var($details['authorOne'], FILTER_SANITIZE_STRING);
+	
 	if(array_key_exists('authorTwo', $details)){
 		$authorTwo=filter_var($details['authorTwo'], FILTER_SANITIZE_STRING);
 	}
-	if(filter_var($details['isbn'], FILTER_VALIDATE_INT) === false){
-		$isbn=(string) filter_var($details['isbn'], FILTER_SANITIZE_NUMBER_INT);
-	}
-	else{
-		return ('Invalid Input')
-	}
 
-	$edition=filter_var($details['edition'], FILTER_SANITIZE_NUMBER_INT);
-
-	if(filter_var($details['email'], FILTER_VALIDATE_EMAIL) === true)
-		$email=$details['email'];
-	else
-		return ('Invalid input');
-
-	$condition=filter_var($details['condition'], FILTER_SANITIZE_STRING;
+	$edition=filter_var($details['edition'], FILTER_SANITIZE_NUMBER_INT);	
+	$condition=filter_var($details['condition'], FILTER_SANITIZE_STRING);
 	$code=$details['id'];
 	$postDate=$details['postDate'];
-	$price=$details['price'];
 	$postDate = (string) date('Y-m-d', $postDate/1000);
+
+	
+	//validate key inputs
+	if(filter_var($details['price'], FILTER_VALIDATE_INT)){
+		$price = $details['price'];
+	}
+	else{
+		return ('Invalid price');
+	}
+
+	if(filter_var($details['isbn'], FILTER_VALIDATE_FLOAT)){
+		$isbn=(string) $details['isbn'];
+	}
+	else{
+		return ('Invalid isbn');
+	}
+	if(filter_var($details['email'], FILTER_VALIDATE_EMAIL))
+		$email=$details['email'];
+	else{
+		return ('Invalid email');
+	}
+
 	$dbhost="dbserver.engr.scu.edu:3306";
 	$dbuser="lwong";
 	$dbpass="mysqldb";
 	$dbname="sdb_lwong";
-
-	//sanitize user input
-	$title = filter_var($title, FILTER_SANITIZE_STRING);
-	$authorOne = filter_var($authorOne, FILTER_SANITIZE_STRING);
-
-
 
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die('Error connecting to db');
 	if(array_key_exists('authorTwo', $details)){
@@ -54,6 +58,7 @@
 		else
 			echo 'Error, statement 2 failed';	
 	}
+	echo 'success';
 	$conn->close();
 
 

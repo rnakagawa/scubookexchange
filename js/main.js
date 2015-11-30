@@ -202,9 +202,14 @@ function foundOrNot(response){
       type: 'POST',
       url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/insertTemp.php',
       data: {'info': info}
-    }).success(function(){
-      sendTheMail('' , info.email, 0, id);
+    }).success(function(response){
+      if(response=='success'){
+        sendTheMail('' , info.email, 0, id);
       //enable the submit button
+      }
+      else {
+        alert(repsonse);
+      }
     });
   }
 }
