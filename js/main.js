@@ -14,7 +14,7 @@ function getResults(){
 function searchTitle(title){
   $.ajax({
     type: 'GET',
-    url: 'php/TitleSearch.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/TitleSearch.php',
     dataType: 'text',
     data: {'title': title}
   }).success(function(response){
@@ -24,20 +24,23 @@ function searchTitle(title){
 
 
 function searchISBN(isbn){
+  alert('searching ISBN');
   $.ajax({
     type: 'GET',
-    url: 'php/searchISBN.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/searchISBN.php',
     dataType: 'text',
     data: {'isbn': isbn}
   }).success(function(response){
+    alert('retrieving results');
     retrieveResults(response);
   });
 }
 
 function retrieveResults(xml){
+  alert('inside retrieve results');
   $.ajax({
     type: 'POST',
-    url: 'php/retrieveResults.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/retrieveResults.php',
     data: {'xml': xml}
   }).success(function(response){
     renderResults(response);
@@ -105,7 +108,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 function getSellers(isbn){
 		$.ajax({
 		type: "GET",
-		url: "php/getSellers.php",
+		url: "http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/getSellers.php",
 		data: { 'isbn': isbn.toString() }
 	}).success(function(response){
 		loadSellers(response);
@@ -136,7 +139,7 @@ function contactSeller(id){
   var buyer = prompt("Please enter your Novell ID");
   $.ajax({
     type: 'POST',
-    url: 'php/getEmail.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/getEmail.php',
     data: {'sellerId': $sellerId}
   }).success(function(response){
     $sellerEmail=response;
@@ -165,7 +168,7 @@ function checkAmazon(){
   }
   $.ajax({
     type: 'GET',
-    url: 'php/searchISBN.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/searchISBN.php',
     dataType: 'text',
     data: {'isbn': isbn}
   }).success(function(response){
@@ -176,7 +179,7 @@ function checkAmazon(){
 function handleAmazonCheck(xml){
   $.ajax({
     type: 'POST',
-    url: 'php/retrieveResults.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/retrieveResults.php',
     data: {'xml': xml}
   }).success(function(response){
     foundOrNot(response);
@@ -207,7 +210,7 @@ function foundOrNot(response){
     };
     $.ajax({
       type: 'POST',
-      url: 'php/insertTemp.php',
+      url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/insertTemp.php',
       data: {'info': info}
     }).success(function(){
       sendTheMail('' , info.email, 0, id);
