@@ -24,20 +24,17 @@ function searchTitle(title){
 
 
 function searchISBN(isbn){
-  alert('searching ISBN');
   $.ajax({
     type: 'GET',
     url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/searchISBN.php',
     dataType: 'text',
     data: {'isbn': isbn}
   }).success(function(response){
-    alert('retrieving results');
     retrieveResults(response);
   });
 }
 
 function retrieveResults(xml){
-  alert('inside retrieve results');
   $.ajax({
     type: 'POST',
     url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/retrieveResults.php',
