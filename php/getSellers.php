@@ -29,7 +29,7 @@
 			$sellers[$i]->title=$row['title'];
 			$sellers[$i]->edition=$row['edition'];
 			$sellers[$i]->email = $row['email'];
-			$sellers[$i]->condition = $row['condition'];
+			$sellers[$i]->condition = $row['condtn'];
 			$sellers[$i]->price=$row['price'];
 			$i++;	
 		}
