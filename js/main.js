@@ -52,7 +52,7 @@ function renderResults(response){
     $author= $r[$i].author;
     $image = $r[$i].image[0];
     $edition = $r[$i].edition;
-    $html = '<div class="item" onclick="selectBook(W'+$r[$i].isbn[0]+')">'+
+    $html = '<div class="item" onclick="selectBook(W'+$r[$i].isbn[0]+')" id="W'+$r[$i].isbn[0]+'">'+
       '<img class="img" src="' + $r[$i].image[0]+ '"></img>'+
       '<div class="bookInfo">';
 
