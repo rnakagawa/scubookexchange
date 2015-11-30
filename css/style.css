@@ -13,8 +13,10 @@ h1{
 .navbar-header .navbar-toggle .icon-bar{
 	background-color: white;
 }
-.navbar-custom{
-	background-color: hsla(354, 85%, 40%, 0.75);
+.navbar-default{
+	background-color: #bd0f21 !important;
+	border-radius: 0px !important;
+	padding: 0 !important;
 }
 .container-custom{
 	width: 85%;
