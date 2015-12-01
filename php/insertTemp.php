@@ -3,18 +3,18 @@
 	$details=$_POST['info'];
 	$title = filter_var($details['title'], FILTER_SANITIZE_STRING);
 	$authorOne=filter_var($details['authorOne'], FILTER_SANITIZE_STRING);
-	
+
 	if(array_key_exists('authorTwo', $details)){
 		$authorTwo=filter_var($details['authorTwo'], FILTER_SANITIZE_STRING);
 	}
 
-	$edition=filter_var($details['edition'], FILTER_SANITIZE_NUMBER_INT);	
+	$edition=filter_var($details['edition'], FILTER_SANITIZE_NUMBER_INT);
 	$condition=filter_var($details['condition'], FILTER_SANITIZE_STRING);
 	$code=$details['id'];
 	$postDate=$details['postDate'];
 	$postDate = (string) date('Y-m-d', $postDate/1000);
 
-	
+
 	//validate key inputs
 	if(filter_var($details['price'], FILTER_VALIDATE_INT)){
 		$price = $details['price'];
@@ -56,7 +56,7 @@
 			$query->execute();
 		}
 		else
-			echo 'Error, statement 2 failed';	
+			echo 'Error, statement 2 failed';
 	}
 	echo 'success';
 	$conn->close();

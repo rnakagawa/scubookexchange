@@ -44,6 +44,7 @@
 			<p>Please enter all of the following information about your book</p>
 		</div>
 		<div>
+<!-- <<<<<<< HEAD -->
 			<form action="grabFormData.php">
 				<p>Title: <input type="text" name="title" required><br></p>
 				<p>ISBN: <input type="text" name='isbn' id='isbn' required><br></p>
@@ -52,14 +53,30 @@
 				<p>Edition: <input type="text" name="edition" required><br></p>
 				<span>Condition: </span>
 				<select id="condition" name='condition' required>
+<!-- =======
+			<form name="subNotFound" action="grabFormData.php" onsubmit="return(validateNotFound());">
+				<p>Title: <input type="text" name="title"><br></p>
+				<p>Author: <input type="text" name="author"><br></p>
+				<p>Author 2: <input type="text" name="author2"><br></p>
+				<p>Edition: <input type="text" name="edition"><br></p>
+				<p>Which SCU class did you use this book for? <input type="text" name="scuClass"><br></p>
+			<div>
+				Book Condition (Select one)<br>
+				<select id="conditionNotFound" name='condition'>
+>>>>>>> 61e8e184dbde8d6e96672c87632807281e48bff7 -->
 					<option selected value='poor'>Poor</option>
 					<option value='okay'>Okay</option>
 					<option value='good'>Good</option>
 					<option value='new'>Like New</option>
 				</select>
+<!-- <<<<<<< HEAD -->
 				<p id="price">Listing Price: $<input type="text" name="price" required></p>
 				<p id="email">Email: <input type="text" name="email" required> @scu.edu 
 				<input type="button" value="Send Verification Code" onclick="getFormDataNotFound()"></p>
+<!-- =======
+			</div>
+			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="getEmail()"></p>
+>>>>>>> 61e8e184dbde8d6e96672c87632807281e48bff7 -->
 
 				<input type="text" placeholder="Verification Code" name="verificationCode" id='vCode' required>
 				<input type="button" value="Submit" onclick="matchVCode()">
