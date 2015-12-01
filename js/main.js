@@ -77,13 +77,6 @@ function selectBook(elem){
   $author=elem.getElementsByClassName('author')[0].innerHTML;
   $edition = elem.getElementsByClassName('ed')[0].innerHTML;
   $title=elem.getElementsByClassName('title')[0].innerHTML;
-  // var info={
-  //   title: $title,
-  //   author: $author,
-  //   edition: $edition,
-  //   isbn: $isbn
-  // };
-  // info=JSON.stringify(info);
   window.location.href="sellers.html?title="+$title+"&author="+$author+"&edition="+$edition+"&isbn="+$isbn;
 }
 
@@ -210,13 +203,13 @@ function foundOrNot(response){
       url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/insertTemp.php',
       data: {'info': info}
     }).success(function(response){
-+      if(response=='success'){
-+        sendTheMail('' , info.email, 0, id);
-       //enable the submit button
-+      }
-+      else {
-+        alert(repsonse);
-+      }
+      if(response=='success'){
+        sendTheMail('' , info.email, 0, id);
+      //enable the submit button
+      }
+      else {
+        alert(repsonse);
+      }
     });
   }
 }
@@ -352,4 +345,20 @@ function notPrice(found){
     return true;
   }
   return false;
+
+function matchVCode(){
+  $check = $('#vCode').val();
+  $.ajax({
+    type: 'GET',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/matchVCode.php',
+    data: {'code': $check}
+  }).success(function(response){
+    if(response==='true'){
+      alert('Your book has been listed for sale!');
+    }
+    else{
+      alert('Error, the verification code does not match. Please try again.');
+    }
+  })
+
 }
