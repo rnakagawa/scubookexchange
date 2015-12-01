@@ -1,14 +1,17 @@
 <?php
   $check = GET['info'];
-  $ver = $check['verification'];
+  //$ver = $check['verification'];
 
   if(filter_var($check['email'], FILTER_VALIDATE_EMAIL))
 		$email=$check['email'];
 	else{
 		echo 'Invalid email';
 	}
-  if (condition) {
-    # code...
+  if (strlen($check['verification']) == 5) {
+    $ver = $check['verification'];
+  }
+  else {
+    echo "Invalid verification code";
   }
 
   $dbhost="dbserver.engr.scu.edu:3306";
@@ -20,7 +23,7 @@
 	$query='SELECT * FROM books WHERE vCode = "'.$ver.'" AND email = "'.$email.'"';
 	$result=mysqli_query($conn, $query);
 	if($result == null){
-		echo('false');
+		echo 'false';
 	}
   else {
     //$row=$result->fetch_assoc();
