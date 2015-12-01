@@ -37,7 +37,7 @@ function getFormDataNotFound(){
       email: email,
       price: price,
       id: id,
-      postDate: new Date().getTime()  
+      postDate: new Date().getTime()
     };
     $.ajax({
       type: 'POST',
