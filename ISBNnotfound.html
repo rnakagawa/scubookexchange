@@ -44,22 +44,20 @@
 			<p>Please enter all of the following information about your book</p>
 		</div>
 		<div>
-			<form action="grabFormData.php">
+			<form name="subNotFound" action="grabFormData.php" onsubmit="return(validateNotFound());">
 				<p>Title: <input type="text" name="title"><br></p>
 				<p>Author: <input type="text" name="author"><br></p>
 				<p>Author 2: <input type="text" name="author2"><br></p>
 				<p>Edition: <input type="text" name="edition"><br></p>
-				<p>Which SCU class did you use this book for? <input type="text"><br></p>
+				<p>Which SCU class did you use this book for? <input type="text" name="scuClass"><br></p>
 			<div>
 				Book Condition (Select one)<br>
-				<input type="radio" name="condition" value="poor"> Poor
-				<br>
-				<input type="radio" name="condition" value="okay"> Okay
-				<br>
-				<input type="radio" name="condition" value="good"> Good
-				<br>
-				<input type="radio" name="condition" value="likeNew"> Like New
-				<br>
+				<select id="conditionNotFound" name='condition'>
+					<option selected value='poor'>Poor</option>
+					<option value='okay'>Okay</option>
+					<option value='good'>Good</option>
+					<option value='new'>Like New</option>
+				</select>
 			</div>
 			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="getEmail()"></p>
 
