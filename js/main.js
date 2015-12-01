@@ -346,6 +346,10 @@ function notPrice(found){
   }
   return false;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d919c534a4483f8dc77c34bd81230ca163f03602
 function matchVCode(){
   $check = $('#vCode').val();
   $.ajax({
