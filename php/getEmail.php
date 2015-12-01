@@ -1,9 +1,5 @@
 <?php
-	$sellerId = $_POST['sellerId'];
-	$dbhost="dbserver.engr.scu.edu:3306";
-	$dbuser="lwong";
-	$dbpass="mysqldb";
-	$dbname="sdb_lwong";
+	require "db_config.php";
 	
 
 

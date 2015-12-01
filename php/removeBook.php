@@ -1,4 +1,6 @@
 <?php
+  require "db_config.php";
+
   $check = GET['info'];
   //$ver = $check['verification'];
 
@@ -13,12 +15,6 @@
   else {
     echo "Invalid verification code";
   }
-
-  $dbhost="dbserver.engr.scu.edu:3306";
-	$dbuser="lwong";
-	$dbpass="mysqldb";
-	$dbname="sdb_lwong";
-	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die('Error connecting to db');
 
 	$query='SELECT * FROM books WHERE vCode = "'.$ver.'" AND email = "'.$email.'"';
 	$result=mysqli_query($conn, $query);
