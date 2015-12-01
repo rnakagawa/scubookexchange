@@ -21,18 +21,21 @@
 	}
 	else{
 		echo ('Invalid price');
+		return;
 	}
 
 	if(filter_var($details['isbn'], FILTER_VALIDATE_FLOAT)){
 		$isbn=(string) $details['isbn'];
 	}
 	else{
-		return ('Invalid isbn');
+		echo ('Invalid isbn');
+		return;
 	}
 	if(filter_var($details['email'], FILTER_VALIDATE_EMAIL))
 		$email=$details['email'];
 	else{
-		return ('Invalid email');
+		echo ('Invalid email');
+		return;
 	}
 
 	$dbhost="dbserver.engr.scu.edu:3306";
