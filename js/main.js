@@ -118,7 +118,7 @@ function loadSellers(response){
       $sellerId = info['sellerId'];
       $html='<div class="seller" id="'+$sellerId+'"><p class="price">$'+$price
         +'</p><p class="condition">'+$condition
-        +'</p><p><button class="buy" onclick="contactSeller('+$sellerId+')">Contact Seller</button></p></div>';
+        +'</p><p><button class="buy" onclick="contactSeller(\''+$sellerId+'\')">Contact Seller</button></p></div>';
       $('#sellers').append($html);
     });
   }
@@ -346,10 +346,7 @@ function notPrice(found){
   }
   return false;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> d919c534a4483f8dc77c34bd81230ca163f03602
 function matchVCode(){
   $check = $('#vCode').val();
   $.ajax({
