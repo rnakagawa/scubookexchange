@@ -33,6 +33,6 @@
 				echo 'Error preparing statement with one author';	
 		}
 	}
-	$row->free();
+	echo 'success';
 	$conn->close();
 ?>

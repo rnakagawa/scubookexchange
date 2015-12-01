@@ -204,7 +204,7 @@ function foundOrNot(response){
       data: {'info': info}
     }).success(function(response){
       if(response=='success'){
-        sendTheMail('' , info.email, 0, id);
+        sendTheMail(null , info.email, 0, id);
       //enable the submit button
       }
       else {
@@ -221,8 +221,9 @@ function matchVCode(){
     url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/matchVCode.php',
     data: {'code': $check}
   }).success(function(response){
-    if(response==='true'){
+    if(response==='success'){
       alert('Your book has been listed for sale!');
+      window.location.href = "index.html";
     }
     else{
       alert('Error, the verification code does not match. Please try again.');

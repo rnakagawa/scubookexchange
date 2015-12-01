@@ -45,27 +45,24 @@
 		</div>
 		<div>
 			<form action="grabFormData.php">
-				<p>Title: <input type="text" name="title"><br></p>
-				<p>Author: <input type="text" name="author"><br></p>
-				<p>Author 2: <input type="text" name="author2"><br></p>
-				<p>Edition: <input type="text" name="edition"><br></p>
-				<p>Which SCU class did you use this book for? <input type="text"><br></p>
-			<div>
-				Book Condition (Select one)<br>
-				<input type="radio" name="condition" value="poor"> Poor
-				<br>
-				<input type="radio" name="condition" value="okay"> Okay
-				<br>
-				<input type="radio" name="condition" value="good"> Good
-				<br>
-				<input type="radio" name="condition" value="likeNew"> Like New
-				<br>
-			</div>
-			<p id="email">Your e-mail address: <input type="text" name="email"> @scu.edu <input type="button" value="Send Verification Code" onclick="getEmail()"></p>
+				<p>Title: <input type="text" name="title" required><br></p>
+				<p>ISBN: <input type="text" name='isbn' id='isbn' required><br></p>
+				<p>Author: <input type="text" name="author" required><br></p>
+				<p>Author 2: <input type="text" name="author2" required><br></p>
+				<p>Edition: <input type="text" name="edition" required><br></p>
+				<span>Condition: </span>
+				<select id="condition" name='condition' required>
+					<option selected value='poor'>Poor</option>
+					<option value='okay'>Okay</option>
+					<option value='good'>Good</option>
+					<option value='new'>Like New</option>
+				</select>
+				<p id="price">Listing Price: $<input type="text" name="price" required></p>
+				<p id="email">Email: <input type="text" name="email" required> @scu.edu 
+				<input type="button" value="Send Verification Code" onclick="getFormDataNotFound()"></p>
 
-			<p id="price">Listing Price: $<input type="text" name="price"></p>
-			<input type="text" placeholder="Verification Code" name="verificationCode">
-			<input type="submit" value="Submit">
+				<input type="text" placeholder="Verification Code" name="verificationCode" id='vCode' required>
+				<input type="button" value="Submit" onclick="matchVCode()">
 			</form>
 		</div>
 	</div>

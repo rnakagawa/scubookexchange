@@ -20,7 +20,7 @@
 		$price = $details['price'];
 	}
 	else{
-		return ('Invalid price');
+		echo ('Invalid price');
 	}
 
 	if(filter_var($details['isbn'], FILTER_VALIDATE_FLOAT)){

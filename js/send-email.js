@@ -18,27 +18,41 @@ function getFormDataNotFound(){
   if(document.forms.length){
     var form = document.forms[0];
     var title = form.elements["title"].value;
+    var isbn = $('#isbn').val();
     var author = form.elements["author"].value;
     var author2 = form.elements["author2"].value;
     var edition = form.elements["edition"].value;
     var condition = form.elements["condition"].value;
-    var email = form.elements["email"].value;
-    email += "@scu.edu";
+    var email = form.elements["email"].value + '@scu.edu';
     var price = form.elements["price"].value;
     var id = makeid();
 
     var formData = {
       title: title,
-      author: author,
-      author2: author2,
+      authorOne: author,
+      authorTwo: author2,
+      isbn: isbn,
       edition: edition,
       condition: condition,
       email: email,
       price: price,
-      id: id
+      id: id,
+      postDate: new Date().getTime()
     };
+    $.ajax({
+      type: 'POST',
+      url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/insertTemp.php',
+      data: {'info': formData}
+    }).success(function(response){
+      if(response == 'success'){
+        sendTheMail(null,email,0,id);
+      }
+      else{
+        alert(response);
+      }
+    })
 
-    sendTheMail(null,email,0,id);
+
   }
 }
 
