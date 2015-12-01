@@ -16,7 +16,8 @@
         public $isbn;
         public $image;
     	public function __construct($title, $author, $ed, $isbn, $image){
-    		$this->title = substr($title,0, 15);
+    		// $this->title = substr($title,0, 15);
+            $this->title=$title;
     		$this->author = $author;
             $this->ed = $ed;
     		$this->isbn = $isbn;

@@ -116,7 +116,7 @@ function loadSellers(response){
       $price = info['price'];
       $condition = info['condition'];
       $sellerId = info['sellerId'];
-      $html='<div class="seller"><p class="price">$'+$price
+      $html='<div class="seller" id="'+$sellerId+'"><p class="price">$'+$price
         +'</p><p class="condition">'+$condition
         +'</p><p><button class="buy" onclick="contactSeller('+$sellerId+')">Contact Seller</button></p></div>';
       $('#sellers').append($html);
@@ -345,7 +345,7 @@ function notPrice(found){
     return true;
   }
   return false;
-
+}
 function matchVCode(){
   $check = $('#vCode').val();
   $.ajax({
@@ -360,6 +360,6 @@ function matchVCode(){
     else{
       alert('Error, the verification code does not match. Please try again.');
     }
-  })
+  });
 
 }
