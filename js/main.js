@@ -208,7 +208,7 @@ function foundOrNot(response){
       //enable the submit button
       }
       else {
-        alert(repsonse);
+        alert(response);
       }
     });
   }
