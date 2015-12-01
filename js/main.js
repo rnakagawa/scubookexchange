@@ -345,6 +345,7 @@ function notPrice(found){
     return true;
   }
   return false;
+}
 
 function matchVCode(){
   $check = $('#vCode').val();
