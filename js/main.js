@@ -363,13 +363,5 @@ function matchVCode(){
     }
   });
 
-window.setInterval(function(){
-    $.ajax({ 
-        url:'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/TwoWeekDelete.php',
-        success:function(){
-            console.log("Success deleted old books");
-        } 
-    });
-},1000)
 
 }
