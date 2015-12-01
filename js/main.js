@@ -185,6 +185,9 @@ function foundOrNot(response){
   }
   //found book so grab content, insert into temp table and send verification code
   else {
+    if(!validate()){
+      return 'error';
+    }
     //grab data from 'num' variable to enter into temp table
     var info={
       title: num[0].title[0],
@@ -235,11 +238,6 @@ function validate(){
     document.sub.price.focus() ;
     return false;
    }
-   else if (document.sub.verificationCode.value == "") {
-     alert( "Please provide a verification code!" );
-     document.sub.verificationCode.focus() ;
-     return false;
-   }
    else{
      return true;
    }
@@ -280,11 +278,6 @@ function validateNotFound(){
     alert( "Please provide a price!" );
     document.subNotFound.price.focus() ;
     return false;
-   }
-   else if (document.subNotFound.verificationCode.value == "") {
-     alert( "Please provide a verification code!" );
-     document.subNotFound.verificationCode.focus() ;
-     return false;
    }
    else{
      return true;

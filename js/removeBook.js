@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   $.ajax({
     type: 'GET',
-    url: 'php/removeBook.php',
+    url: 'http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/removeBook.php',
     data: {'info': info}
   }).success(function(response){
     if(response==='success'){

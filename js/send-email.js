@@ -15,6 +15,7 @@ function makeid()
 }
 
 function getFormDataNotFound(){
+  if(!validateNotFound()){return 'invalid input';}
   if(document.forms.length){
     var form = document.forms[0];
     var title = form.elements["title"].value;
