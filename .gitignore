@@ -1,2 +1,2 @@
-/aws_config.php
-/db_config.php
+php/aws_config.php
+php/db_config.php
