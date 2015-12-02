@@ -6,7 +6,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="type/css" href="css/style.css">
-	<script type='text/javascript' src='https://mandrillapp.com/api/docs/js/mandrill.js'></script>
+	<script type='text/javascript' src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
 	<script src='js/send-email.js'></script>
 	<script src='js/main.js'></script>
 
@@ -47,19 +47,60 @@
 		</div>
 		<div id="fillOut">
 			<form id="submittionform" name="sub" method="post" action="php/grabFormData.php" onsubmit="return(validate());">
-				<p id="isbnInput">ISBN: <input type="text" name="isbnInput"><br></p>
-				<span>Condition: </span>
-				<select id="condition" name='condition'>
+				<p id="isbnInput">
+                    <div class="form-left">
+                        ISBN:
+                    </div>
+                    <div class ="form-right">
+                        <input type="text" name="isbnInput" style="width:11.5em">
+                    </div>
+                </p>
+                
+                <div class="clearer"> </div>
+                
+                <p>
+				<div class="form-left">Condition: </div>
+				<select  id="condition" name='condition'>
 					<option selected value='poor'>Poor</option>
 					<option value='okay'>Okay</option>
 					<option value='good'>Good</option>
 					<option value='new'>Like New</option>
 				</select>
-				<p><span>Email:</span><input type='text' id='email' name='email'>@scu.edu</input>
-				<p>Listing Price: $<input id='price' type="text" name="price"></p>
-				<input type="button" value="Send Verification Code" onclick="checkAmazon()"></p>
-				<input id='vCode' type="text" placeholder="Verification Code" name="verificationCode">
-				<input type='button' onclick='matchVCode()' value='Submit'/>
+                </p>
+                
+                <div class="clearer"> </div>
+                
+				<p>
+                    <div class ="form-left">Email:</div>
+                    <div class ="form-right">
+                        <input type='text' name='email' style="width:7em">@scu.edu</input>
+                    </div>
+				</p>
+                
+                <div class ="clearer"> </div>
+                
+                <p>
+                    <div class="form-left">
+                        Listing Price: $
+                    </div>
+                    <div class="form-right">
+                        <input type="text" name="price"></input>
+                    </div>
+                </p>
+                <div class ="clearer"> </div>
+                
+                
+                <div class= "centered">
+                    <input type="button" class="verificationcode" value="Send Verification Code" onclick="checkAmazon()">
+                </div>
+                
+            
+                <div class ="centered">
+                    <input id='vCode' type="text" placeholder="Verification Code" name="verificationCode">
+                    <input type='button' id="codesubmit" onclick='matchVCode()' value='Submit'/>
+                </div>
+                </br>
+                </br>
 			</form>
 		</div>
 	</div>

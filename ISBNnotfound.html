@@ -6,7 +6,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="type/css" href="css/style.css">
-	<script type='text/javascript' src='https://mandrillapp.com/api/docs/js/mandrill.js'></script>
+	<script type='text/javascript' src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
 	<script src='js/send-email.js'></script>
 	<script src='js/main.js'></script>
 </head>
@@ -44,25 +44,103 @@
 			<h1>ISBN not found</h1>
 			<p>Please enter all of the following information about your book</p>
 		</div>
-		<div>
 			<form name="subNotFound">
-				<p>Title: <input type="text" name="title" required><br></p>
-				<p>ISBN: <input type="text" name='isbn' id='isbn' required><br></p>
-				<p>Author: <input type="text" name="author" required><br></p>
-				<p>Author 2: <input type="text" name="author2" required><br></p>
-				<p>Edition: <input type="text" name="edition" required><br></p>
-				<span>Condition: </span>
-				<select id="condition" name='condition' required>
-					<option selected value='poor'>Poor</option>
-					<option value='okay'>Okay</option>
-					<option value='good'>Good</option>
-					<option value='new'>Like New</option>
-				</select>
-				<p id="price">Listing Price: $<input type="text" name="price" required></p>
-				<p id="email">Email: <input type="text" name="email" required> @scu.edu
-				<input type="button" value="Send Verification Code" onclick="getFormDataNotFound()"></p>
-				<input type="text" placeholder="Verification Code" name="verificationCode" id='vCode' required>
-				<input type="button" value="Submit" onclick="matchVCode()">
+				<p>
+                    <div class = "form-left">
+                        Title:
+                    </div>
+                    <div class="form-right">
+                        <input type="text" name="title" required>
+                    </div>
+                </p>
+                </br>
+                <div class="clearer"> </div>
+				<p>
+                    <div class ="form-left">
+                        ISBN:
+                    </div>
+                    <div class="form-right">
+                        <input type="text" name='isbn' id='isbn' required>
+                    </div>
+                </p>
+                </br>
+                <div class="clearer"> </div>
+				<p>
+                    <div class="form-left">
+                        Author:
+                    </div>
+                    <div class="form-right">
+                        <input type="text" name="author" required>
+                    </div>
+                </p>
+            
+                <div class="clearer"> </div>
+                <p>
+                    <div class="form-left">
+                        Author 2:
+                    </div>
+                    <div class="form-right">
+                        <input type="text" name="author2" required>
+                    </div>
+                    </p>
+                    
+                <div class="clearer"> </div>
+                <p>
+                    <div class = "form-left">
+                        Edition:
+                    </div>
+                    <div class = "form-right">
+                        <input type="text" name="edition" required>
+                    </div>
+                </p>
+                
+                <div class="clearer"> </div>
+                
+                <p>
+                <div class="form-left">Condition: </div>
+                <select  id="condition" name='condition'>
+                    <option selected value='poor'>Poor</option>
+                    <option value='okay'>Okay</option>
+                    <option value='good'>Good</option>
+                    <option value='new'>Like New</option>
+                </select>
+                </p>
+                
+                <div class="clearer"> </div>
+                
+                <p>
+                    <div class="form-left">
+                        Listing Price: $
+                    </div>
+                    <div class="form-right">
+                        <input type="text" name="price" required>
+                    </div>
+                </p>
+                <div class="clearer"> </div>
+                
+                <p>
+                    <div class ="form-left">Email:</div>
+                    <div class ="form-right">
+                        <input type='text' name='email' style="width:7em">@scu.edu</input>
+                    </div>
+                </p>
+                
+                <div class="clearer"> </div>
+
+
+                <div class= "centered">
+                    <input type="button" class="verificationcode" value="Send Verification Code" onclick="getFormDataNotFound()">
+                </div>
+
+
+                <div class ="centered">
+                    <input id='vCode' type="text" placeholder="Verification Code" name="verificationCode">
+                    <input type='button' id="codesubmit" onclick='matchVCode()' value='Submit'/>
+                </div>
+                </br>
+                </br>
+
+
 			</form>
 		</div>
 	</div>

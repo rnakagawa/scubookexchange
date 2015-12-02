@@ -151,3 +151,38 @@ hr{
 #isbnInput{
 	padding-top: 5px;
 }
+#vCode{
+    width:11em;
+}
+#codesubmit{
+    width:5.7em;
+}
+
+.form-left{
+    padding-right:10px;
+    padding-top:2px;
+    text-align:right;
+    position:relative;
+    float:left;
+    width:40%;
+}
+
+.form-right{
+    position:relative;
+    float:left;
+    width:60%;
+}
+
+.centered{
+    width:17em;
+    margin: 0.5em auto;
+}
+.verificationcode{
+    width:100%;
+    margin: 1.25em auto 0 auto;
+}
+
+
+.clearer{
+    clear:both;
+}
