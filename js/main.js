@@ -259,11 +259,6 @@ function validateNotFound(){
     document.subNotFound.edition.focus();
     return false;
   }
-  else if (document.subNotFound.scuClass.value == "") {
-    alert( "Please provide the class the book was used for!" );
-    document.subNotFound.scuClass.focus();
-    return false;
-  }
   else if(noOptionSelected(0)){
     alert( "Please provide the book condition!" );
     document.subNotFound.condition.focus();
@@ -314,7 +309,7 @@ function noOptionSelected(found){
     var choice = document.getElementById("condition");
   }
   else {
-    var choice = document.getElementById("conditionNotFound")
+    var choice = document.getElementById("condition")
   }
 
   if(choice.selectedIndex == -1) {

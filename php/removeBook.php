@@ -18,16 +18,16 @@
 
 	$query='SELECT * FROM books WHERE vCode = "'.$ver.'" AND email = "'.$email.'"';
 	$result=mysqli_query($conn, $query);
-	if($result == null){
-		echo 'false';
-	}
+	// if($result == null){echo ('false');}
+  $row=$result->fetch_assoc();
+  if(count($row)<1){
+    echo 'false';
+  }
   else {
-    //$row=$result->fetch_assoc();
     $stmt = $conn->prepare("DELETE FROM books WHERE vCode = ? AND email = ?");
     $stmt->bind_param('ss', $ver, $email);
     $stmt->execute();
     $stmt->close();
-		//mysqli_query($conn, $stmt);
     echo 'success';
   }
 	$conn->close();

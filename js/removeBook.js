@@ -13,7 +13,7 @@ function removeBook(){
   }).success(function(response){
     if(response==='success'){
       alert('Your book has been removed!');
-      window.location.href = "index.html";
+      // window.location.href = "index.html";
     }
     else{
       alert(response);

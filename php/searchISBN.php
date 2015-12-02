@@ -1,5 +1,5 @@
 <?php
-    require "aws_config.php";
+
 
     // function takes in a 13 digit ISBN number
     $isbn = $_GET['isbn'];
@@ -8,6 +8,7 @@
 
     function searchByISBN($isbn_number)
     {
+        require "aws_config.php";        
         //**** Set constant values***\\
 
         $uri = "/onca/xml";

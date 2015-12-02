@@ -1,5 +1,5 @@
 <?php
-    require "aws_config.php";
+
 
     // "Fundamentals of Embedded Software"
     $title=$_GET['title'];
@@ -8,7 +8,7 @@
     
     function searchByTitle($book_title)
     {
-        
+        require "aws_config.php";
         $uri = "/onca/xml";
         
         // These are the search parameters

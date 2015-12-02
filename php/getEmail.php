@@ -1,7 +1,7 @@
 <?php
 	require "db_config.php";
 	
-
+	$sellerId=$_POST['sellerId'];
 
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die('Error connecting to db');
 	$query='SELECT email FROM books WHERE vCode= "'.$sellerId.'"';
