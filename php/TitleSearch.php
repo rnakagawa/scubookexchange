@@ -1,5 +1,6 @@
 <?php
-    
+    require "aws_config.php";
+
     // "Fundamentals of Embedded Software"
     $title=$_GET['title'];
     $return_value = searchByTitle($title);
@@ -7,26 +8,6 @@
     
     function searchByTitle($book_title)
     {
-        
-        
-        //**** Set constant values***\\
-        
-        // Your AWS Access Key ID, as taken from the AWS Your Account page
-        $aws_access_key_id = "AKIAIRZECTYXZZ6WZQGA";
-        
-        // Your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
-        $aws_secret_key = "xixbnulAPZyvRe4jsc/b5AKN93nQ/iAGQJcSWafT";
-        
-        // Your AWS Associate Name
-        $associate_tag = "scu0bb-20";
-        
-        // The region you are interested in
-        $endpoint = "webservices.amazon.com";
-        
-        
-        
-        
-        
         
         $uri = "/onca/xml";
         
