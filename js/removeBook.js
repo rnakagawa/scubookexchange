@@ -1,9 +1,9 @@
-$(document).ready(function(){
+function removeBook(){
   var email = prompt("Please enter your SCU email");
   var verification = prompt("Please enter your verfication code");
   var info = {
     email: email,
-    verfication: verification
+    verification: verification
   };
 
   $.ajax({
@@ -16,7 +16,7 @@ $(document).ready(function(){
       window.location.href = "index.html";
     }
     else{
-      alert('Error, the email or verification code does not match. Please try again.');
+      alert(response);
     }
   });
-});
+}

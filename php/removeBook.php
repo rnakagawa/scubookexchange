@@ -1,7 +1,7 @@
 <?php
   require "db_config.php";
 
-  $check = GET['info'];
+  $check = $_GET['info'];
   //$ver = $check['verification'];
 
   if(filter_var($check['email'], FILTER_VALIDATE_EMAIL))
