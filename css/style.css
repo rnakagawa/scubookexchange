@@ -1,4 +1,3 @@
-
 body{
 	padding: 0px !important;
 	margin: 0px !important;
@@ -30,8 +29,9 @@ h1{
 	border: gray 1 solid;
 }
 .container-results{
+	overflow: hidden;
+	white-space: nowrap;
 	padding: 10px;
-	/*border: #AFADAD 1px solid;*/
 	border-radius: 3px;
 	width: 85%;
 	margin-left: auto;
@@ -44,6 +44,8 @@ hr{
 		margin-bottom: 0;
 }
 .mbookInfo{
+	overflow: hidden;
+	white-space: nowrap;	
 	float: left;
 	max-width: 55%;
 	margin-top: 10px;
@@ -64,6 +66,7 @@ hr{
 	width: 100px;
 }
 .bookInfo{
+	/*width: 100%;*/
 	position: absolute;
 	left: 125px;
 	top: 15px;
@@ -87,6 +90,8 @@ hr{
 	width: 100%;
 }
 .info-container{
+	overflow: hidden;
+	white-space: nowrap;	
 	position: relative;
 	width: 100%;
 	border-bottom: #AFADAD 1px solid;

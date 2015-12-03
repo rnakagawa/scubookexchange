@@ -13,7 +13,7 @@
 		$row=$result->fetch_assoc();
 		$stmt = 'DELETE FROM temp WHERE vCode = "'.$code.'"';
 		mysqli_query($conn, $stmt);
-		if(array_key_exists('authorTwo', $row)){
+		if(array_key_exists('author2', $row)){
 			if($query = $conn->prepare('INSERT INTO books VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')){
 				$query->bind_param("ssssssssss", $row['isbn'], $row['title'], $row['author1'], $row['author2'], $row['edition'], $row['email'], $row['condtn'], $row['vCode'], $row['postDate'], $row['price']);
 				$query->execute();
