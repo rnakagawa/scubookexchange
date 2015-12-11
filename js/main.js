@@ -96,13 +96,13 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 function getSellers(isbn){
-		$.ajax({
-		type: "GET",
-		url: "http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/getSellers.php",
-		data: { 'isbn': isbn.toString() }
-	}).success(function(response){
-		loadSellers(response);
-	});
+    $.ajax({
+    type: "GET",
+    url: "http://students.engr.scu.edu/~lwong/coen168/scubookexchange/php/getSellers.php",
+    data: { 'isbn': isbn.toString() }
+  }).success(function(response){
+    loadSellers(response);
+  });
 }
 
 function loadSellers(response){
